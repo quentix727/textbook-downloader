@@ -8,6 +8,7 @@ from reportlab.pdfgen import canvas
 bk = input('book number:')          # 官网二级目录的名称，如 https://book.pep.com.cn/1443001112191/mobile/index.html
 pgnum = int(input('page number:'))  # 页数
 user_dir = os.path.expanduser("~")  # 获取用户目录
+os.mkdir(user_dir + '\\AppData\\Local\\Temp\\azwsexdrcftvgybhunjimexdrcftvgybhunj')
 
 for i in range(1, pgnum + 1):
     if len(str(i)) == 1:
@@ -17,7 +18,7 @@ for i in range(1, pgnum + 1):
     else:
         num = str(i)
 
-    urllib.request.urlretrieve('https://book.pep.com.cn/' + bk + '/files/mobile/' + str(i) + '.jpg', user_dir + '\\AppData\\Local\\Temp\\' + bk + '_' + num + '.jpg')
+    urllib.request.urlretrieve('https://book.pep.com.cn/' + bk + '/files/mobile/' + str(i) + '.jpg', user_dir + '\\AppData\\Local\\Temp\\azwsexdrcftvgybhunjimexdrcftvgybhunj\\' + bk + '_' + num + '.jpg')
 
 
 def images_to_pdf(image_folder, output_pdf):
@@ -32,5 +33,8 @@ def images_to_pdf(image_folder, output_pdf):
 
     c.save()
     print(f"PDF file saved as : {output_pdf}")
+    # 注释下面代码，因为目录不是空的
+    # os.rmdir(user_dir + '\\AppData\\Local\\Temp\\azwsexdrcftvgybhunjimexdrcftvgybhunj')
 
-images_to_pdf(user_dir + '\\AppData\\Local\\Temp', bk + ".pdf")
+images_to_pdf(user_dir + '\\AppData\\Local\\Temp\\azwsexdrcftvgybhunjimexdrcftvgybhunj', bk + ".pdf")
+
