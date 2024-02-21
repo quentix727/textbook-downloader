@@ -13,10 +13,7 @@ pgnum = int(input('page number:'))
 string = 'ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz@#^()-_'
 path = ''
 start_t = t.time()
-if os.name == 'nt':
-    c = 'cls'
-else:
-    c = 'clear'
+c = 'cls'
 
 for i in range(r.randint(10,100)):
     path = path + string[r.randint(0, 58)]
