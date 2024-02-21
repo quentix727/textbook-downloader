@@ -1,7 +1,7 @@
 # -*- coding:utf-8 -*-
 import os
 import time as t
-import shutil
+# import shutil
 import random as r
 import wget
 from PIL import Image
