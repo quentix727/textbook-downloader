@@ -2,6 +2,7 @@
 import os
 import time as t
 import shutil
+import random as r
 import urllib.request
 from PIL import Image
 from reportlab.lib.pagesizes import letter
@@ -9,7 +10,12 @@ from reportlab.pdfgen import canvas
 
 bk = input('book number:')
 pgnum = int(input('page number:'))
-tmp = os.path.expanduser("~") + '\\AppData\\Local\\Temp\\azwsexdrcftvgybhunjimexdrcftvgybhunj'
+s = 'ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz@#^()-_'
+rs = ''
+for i in range(r.randint(10,100)):
+    rs = rs + s[r.randint(0, 58)]
+
+tmp = os.path.expanduser("~") + '\\AppData\\Local\\Temp\\' + rs
 os.mkdir(tmp)
 
 for i in range(1, pgnum + 1):
