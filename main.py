@@ -10,7 +10,7 @@ from PIL import Image
 from reportlab.lib.pagesizes import letter
 from reportlab.pdfgen import canvas
 
-ALPHABET = 'ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz'
+ALPHABET = 'ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789'
 TEMP_FOLDER = os.path.expanduser("~") + '\\AppData\\Local\\Temp\\'
 
 def clear_screen():
@@ -45,11 +45,12 @@ def images_to_pdf(image_folder, output_pdf):
 
     c.save()
     print(f"PDF file saved as : {output_pdf}")
-
+    '''
     for filename in os.listdir(image_folder):
         file_path = os.path.join(image_folder, filename)
         os.remove(file_path)
     os.rmdir(image_folder)
+    '''
 
 if __name__ == "__main__":
     bk = input('book number:')
